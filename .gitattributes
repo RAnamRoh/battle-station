@@ -1,0 +1,5 @@
+* text=auto eol=lf
+# Git LFS for curated source art and brand masters (enable with `git lfs install` when the first file is added)
+# art/source/**/*.psd filter=lfs diff=lfs merge=lfs -text
+# art/source/**/*.kra filter=lfs diff=lfs merge=lfs -text
+# marketing/brand/**/*.psd filter=lfs diff=lfs merge=lfs -text

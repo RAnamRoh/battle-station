@@ -1,0 +1,46 @@
+schema: spec-driven
+
+context: |
+  Product: a browser 2D online 1v1 fighting game whose fighters are real coworkers
+  (with their consent). Gameplay is in the style of an anime arena fighter; the look is an
+  early-90s arcade comic style. Every character, name and asset is original. Never use
+  franchise, studio or game names in specs, prompts or assets.
+  Team: one human product owner (new to game dev) and Claude Code as the implementer.
+  Process: the AI-DLC method running through OpenSpec. An intent becomes a change; a bolt is
+  2-6 tasks ending with tests passing and a commit; there are 3 human gates. See docs/process/how-we-work.md.
+  Constraints:
+  - The MVP must cost $0. Use free tiers only.
+  - The first market is Bangladesh.
+  - Phones (touch) and desktop browsers are both first-class.
+  - The fight simulation (packages/sim) is deterministic: integer math only, seeded RNG,
+    no engine or DOM imports. Online play, replays and server verification depend on this.
+  - Anything that changes (fighters, moves, stages, tuning, art style, branding) is data,
+    not code.
+  - Personal data (photos, consent records) never goes into git.
+
+rules:
+  proposal:
+    - Start with the Intent (what the human wants and why), in plain language.
+    - List the affected capabilities and state "ADRs needed - yes/no".
+    - List open questions instead of guessing; mark each as product or tech.
+    - State what is out of scope.
+  specs:
+    - Describe observable behaviour with WHEN/THEN scenarios.
+    - Do not put tuning numbers (frame data, damage, speeds) in specs. Point to the content data instead.
+  design:
+    - A change to the sim determinism contract, the netcode model, the data model, tenancy,
+      payments or the art style needs an ADR in docs/decisions/.
+  tasks:
+    - Group tasks into bolts of 2-6 tasks. Each bolt ends with typecheck and tests passing
+      and a Conventional Commit.
+    - Any change to sim behaviour updates or adds golden replay tests.
+    - Include a human play-test checkpoint for anything that affects game feel.
+
+operations:
+  apply:
+    guidance:
+      - Work one bolt at a time and summarise each bolt for the human review gate.
+      - If the code and the spec disagree, stop and ask which one is right. Never silently change a spec.
+  archive:
+    guidance:
+      - Archive only after the human approves. Mark any related ADRs as accepted.
