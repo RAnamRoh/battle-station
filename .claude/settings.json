@@ -1,0 +1,8 @@
+{
+  "enabledPlugins": {
+    "claude-md-management@claude-plugins-official": true,
+    "context7@claude-plugins-official": true,
+    "cloudflare@claude-plugins-official": true,
+    "commit-commands@claude-plugins-official": true
+  }
+}
