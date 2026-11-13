@@ -24,5 +24,5 @@
 
 - [x] 4.1 Install the agreed official plugins at project scope (claude-md-management, context7, cloudflare, commit-commands). typescript-lsp is deferred until code exists, because it needs typescript-language-server on the PATH.
 - [x] 4.2 Review and add third-party skills (gamedev: game-feel, game-ai, input-systems)
-- [ ] 4.3 Commit with Conventional Commits, create the public GitHub repo `battle-station`, and push
-- [ ] 4.4 Archive this change after product-owner approval (already given on 2026-11-14)
+- [x] 4.3 Commit with Conventional Commits, create the public GitHub repo `battle-station`, and push
+- [x] 4.4 Archive this change after product-owner approval (already given on 2026-11-14)
