@@ -7,11 +7,13 @@
     "node": ">=22"
   },
   "scripts": {
-    "build": "turbo run build",
     "dev": "turbo run dev",
+    "play": "pnpm --filter @bs/web build && pnpm --filter @bs/match exec wrangler dev --port 8787 --ip 0.0.0.0",
+    "deploy": "pnpm --filter @bs/match run deploy",
+    "content": "pnpm --filter @bs/content-schema build",
+    "build": "turbo run build",
     "typecheck": "turbo run typecheck",
     "test": "turbo run test",
-    "lint": "turbo run lint",
     "spec": "openspec",
     "spec:list": "openspec list",
     "spec:validate": "openspec validate --all"

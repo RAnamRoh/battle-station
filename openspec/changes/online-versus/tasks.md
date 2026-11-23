@@ -20,4 +20,4 @@
 ## 4. Bolt 4: Verify
 
 - [x] 4.1 Two browser pages play a full online match locally, with and without the direct connection
-- [ ] 4.2 README: how to run locally, how to play on the same Wi-Fi, how to deploy
+- [x] 4.2 README: how to run locally, how to play on the same Wi-Fi, how to deploy
