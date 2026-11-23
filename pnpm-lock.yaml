@@ -124,6 +124,22 @@ importers:
         specifier: 'catalog:'
         version: 6.0.3
 
+  packages/netcode:
+    dependencies:
+      '@bs/sim':
+        specifier: workspace:*
+        version: link:../sim
+    devDependencies:
+      '@types/node':
+        specifier: 'catalog:'
+        version: 22.20.5
+      typescript:
+        specifier: 'catalog:'
+        version: 6.0.3
+      vitest:
+        specifier: 'catalog:'
+        version: 5.1.1(@types/node@22.20.5)(vite@8.3.8(@types/node@22.20.5)(esbuild@0.28.2)(tsx@4.23.15)(yaml@2.9.1))
+
   packages/sim:
     devDependencies:
       '@types/node':

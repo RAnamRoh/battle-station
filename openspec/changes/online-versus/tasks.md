@@ -2,9 +2,9 @@
 
 ## 1. Bolt 1: Netcode
 
-- [ ] 1.1 `packages/netcode`: transport interface, message encoding, rollback session, time sync, checksums
-- [ ] 1.2 Tests: two sessions over a lossy, delayed, reordering link agree with each other and with a plain run; stall and resume; desync is reported
-- [ ] 1.3 Write ADR-0013 (status: proposed)
+- [x] 1.1 `packages/netcode`: transport interface, message encoding, rollback session, time sync, checksums
+- [x] 1.2 Tests: two sessions over a lossy, delayed, reordering link agree with each other and with a plain run; stall and resume; desync is reported
+- [x] 1.3 Write ADR-0013 (status: proposed)
 
 ## 2. Bolt 2: Room server
 

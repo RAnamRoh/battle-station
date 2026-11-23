@@ -21,3 +21,4 @@ One file per significant decision, using the [MADR 4](https://adr.github.io/madr
 | [0010](0010-pwa-first-capacitor-later.md) | PWA first, Capacitor later | accepted |
 | [0011](0011-hyperframes-marketing-video.md) | HyperFrames for marketing video | accepted |
 | [0012](0012-storage-tiers-and-personal-data.md) | Storage tiers; personal data never in git | accepted |
+| [0013](0013-online-play-model.md) | Online play: rollback, hybrid transport, rooms as Durable Objects | proposed |
