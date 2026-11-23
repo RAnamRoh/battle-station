@@ -1,16 +1,8 @@
 import { createHash } from 'node:crypto';
 import { Cls, SLOT_NAMES, type FighterDef, type HitProps, type MoveDef, type Rules, type SimPack } from '@bs/sim';
 import type { z } from 'zod';
-import { fighterSchema, rulesSchema, stageSchema, type Presentation, type StageDef } from './schema';
-
-export interface ContentPack {
-  id: string;
-  /** SHA-256 of the canonical JSON of `sim`. Replays and online matches pin this value. */
-  gameplayHash: string;
-  sim: SimPack;
-  fighters: { id: string; presentation: Presentation }[];
-  stages: StageDef[];
-}
+import type { ContentPack } from './pack';
+import { fighterSchema, rulesSchema, stageSchema } from './schema';
 
 export interface SourceFile { path: string; data: unknown }
 

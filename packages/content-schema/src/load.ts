@@ -1,7 +1,8 @@
 import { readdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { parse as parseYaml } from 'yaml';
-import { compilePack, type ContentPack, type SourceFile } from './compile';
+import { compilePack, type SourceFile } from './compile';
+import type { ContentPack } from './pack';
 
 function readYaml(path: string): SourceFile {
   return { path, data: parseYaml(readFileSync(path, 'utf8')) };

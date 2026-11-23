@@ -13,12 +13,12 @@
 
 ## 3. Bolt 3: Web client
 
-- [ ] 3.1 `packages/input`: keyboard and touch to bitmask
-- [ ] 3.2 `apps/web`: Phaser scene, fixed-step loop, placeholder fighter drawing, HUD
-- [ ] 3.3 Hit sparks, shake, super cut-in, synthesised sound
-- [ ] 3.4 Training aids: dummy modes, ki refill, hit-area display, combo counter
+- [x] 3.1 `packages/input`: keyboard and touch to bitmask
+- [x] 3.2 `apps/web`: Phaser scene, fixed-step loop, placeholder fighter drawing, HUD
+- [x] 3.3 Hit sparks, shake, super cut-in, synthesised sound
+- [x] 3.4 Training aids: dummy modes, ki refill, hit-area display, combo counter
 
 ## 4. Bolt 4: Verify
 
-- [ ] 4.1 Run in a real browser (desktop and phone-sized touch emulation) and fix what is found
+- [x] 4.1 Run in a real browser (desktop and phone-sized touch emulation) and fix what is found
 - [ ] 4.2 Product-owner play-test (deferred to the end of this run)
