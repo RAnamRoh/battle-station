@@ -4,6 +4,7 @@ import { Btn, createMatch, Phase, type State } from '@bs/sim';
 import { sfx } from './audio';
 import { LocalDriver, type FightDriver } from './driver';
 import { pack } from './pack';
+import { fighterCard } from './cards';
 import { portrait } from './portrait';
 import { createGame, type FightScene, type FightView } from './render/scene';
 import { loadSettings, saveSettings, type Settings } from './settings';
@@ -27,14 +28,14 @@ export class App {
   readonly touchDevice = isTouchDevice();
   readonly touch: TouchControls;
   settings: Settings = loadSettings();
-  private keyboards: KeyboardInput[] = [];
+  keyboards: KeyboardInput[] = [];
   private screen: HTMLElement | null = null;
-  private overlay: { close: () => void } | null = null;
+  overlay: { close: () => void } | null = null;
   /** Scripted inputs for automated checks: one entry per frame, used instead of the real controls. */
   private scripted: number[] = [];
   private pauseAfterScript = false;
   private current: FightView | null = null;
-  private onEscape: (() => void) | null = null;
+  onEscape: (() => void) | null = null;
 
   constructor() {
     this.scene = createGame(document.getElementById('game')!).scene;
@@ -44,7 +45,6 @@ export class App {
     for (const type of ['pointerdown', 'keydown'] as const) window.addEventListener(type, () => sfx.unlock(), { passive: true });
     window.addEventListener('keydown', (e) => { if (e.code === 'Escape' && this.onEscape) this.onEscape(); });
     this.applySettings();
-    this.menu();
   }
 
   get simple(): boolean { return this.settings.simple ?? this.touchDevice; }
@@ -58,7 +58,7 @@ export class App {
 
   // ---------- screens ----------
 
-  private setScreen(node: HTMLElement | null): void {
+  setScreen(node: HTMLElement | null): void {
     this.screen?.remove();
     this.overlay?.close();
     this.overlay = null;
@@ -66,7 +66,7 @@ export class App {
     if (node) this.ui.append(node);
   }
 
-  private endFight(): void {
+  endFight(): void {
     for (const k of this.keyboards) k.dispose();
     this.keyboards = [];
     this.touch.setVisible(false);
@@ -159,23 +159,7 @@ export class App {
         extras.append(el('span', { class: 'muted', text: 'Difficulty' }), ...chips);
       }
     };
-    pack.fighters.forEach((f, i) => {
-      const p = f.presentation;
-      const st = pack.sim.fighters[i]!.stats;
-      const bar = (label: string, v: number) => el('div', { class: 'stat' }, [el('span', { text: label }), el('i', {}, [el('b', { style: `width:${Math.round(Math.max(0.12, Math.min(1, v)) * 100)}%` })])]);
-      const card = el('button', { class: 'fcard', style: `--c:${p.colours.body}` }, [
-        portrait(p, 84),
-        el('div', { class: 'fname', text: p.name }),
-        el('div', { class: 'fsub', text: `${p.archetype} · ${p.department}` }),
-        el('div', { class: 'ftag', text: p.tagline }),
-        bar('Health', (st.hp - 800) / 350),
-        bar('Speed', (st.walkF - 600) / 600),
-        bar('Power', (st.damageMul - 85) / 25),
-        bar('Ki', (st.kiGainMul - 60) / 70),
-      ]);
-      card.addEventListener('click', () => pick(i));
-      grid.append(card);
-    });
+    pack.fighters.forEach((_f, i) => grid.append(fighterCard(i, () => pick(i))));
     this.setScreen(el('div', { class: 'select' }, [
       el('div', { class: 'row select-head' }, [button('Back', () => this.menu(), true), title]),
       grid, extras,
@@ -184,7 +168,7 @@ export class App {
 
   // ---------- fights ----------
 
-  private readLocal = (): number => {
+  readLocal = (): number => {
     if (this.scripted.length) {
       const v = this.scripted.shift()!;
       if (!this.scripted.length && this.pauseAfterScript) queueMicrotask(() => { if (this.current) this.current.driver.paused = true; });
@@ -192,6 +176,13 @@ export class App {
     }
     return (this.keyboards[0]?.read() ?? 0) | this.touch.read();
   };
+
+  /** Turns on the one-player controls: the whole keyboard, plus touch on phones. */
+  soloControls(): void {
+    for (const k of this.keyboards) k.dispose();
+    this.keyboards = [new KeyboardInput(KEYS_SOLO)];
+    this.touch.setVisible(this.touchDevice);
+  }
 
   fight(setup: FightSetup): void {
     this.endFight();

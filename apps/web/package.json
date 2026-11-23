@@ -15,7 +15,9 @@
     "@bs/input": "workspace:*",
     "@bs/sim": "workspace:*",
     "phaser": "catalog:",
-    "@bs/bots": "workspace:*"
+    "@bs/bots": "workspace:*",
+    "@bs/netcode": "workspace:*",
+    "@bs/match": "workspace:*"
   },
   "devDependencies": {
     "typescript": "catalog:",

@@ -14,6 +14,8 @@ export interface FightView {
   driver: FightDriver;
   stageId: string;
   showBoxes: boolean;
+  /** Player names to show beside the fighter names (online play). */
+  labels?: [string, string];
   /** Called after every tick, for page-side UI such as the touch super button. */
   onTick?: (state: State) => void;
 }
@@ -43,6 +45,7 @@ export class FightScene extends Phaser.Scene {
   private tCut!: Phaser.GameObjects.Text;
   private tCutSub!: Phaser.GameObjects.Text;
   private tStatus!: Phaser.GameObjects.Text;
+  private tInfo!: Phaser.GameObjects.Text;
   private shownHp = [0, 0];
   private trail: { x: number; y: number }[][] = [[], []];
   private stageDrawn = '';
@@ -65,7 +68,8 @@ export class FightScene extends Phaser.Scene {
     this.tSub = text(this, VIEW_W / 2, 292, 26, '#ffffff', 6).setOrigin(0.5).setDepth(14);
     this.tCut = text(this, 0, 0, 54, '#ffffff', 10).setDepth(16);
     this.tCutSub = text(this, 0, 0, 26, '#ffd23f', 6).setDepth(16);
-    this.tStatus = text(this, VIEW_W / 2, 110, 22, '#ffffff', 5).setOrigin(0.5);
+    this.tStatus = text(this, VIEW_W / 2, 130, 24, '#ffffff', 6).setOrigin(0.5);
+    this.tInfo = text(this, VIEW_W / 2, VIEW_H - 14, 12, '#cfc8e8', 3).setOrigin(0.5);
     this.fx = new Fx(this.cameras.main, () => this.names());
   }
 
@@ -118,7 +122,7 @@ export class FightScene extends Phaser.Scene {
 
   private clear(): void {
     this.gWorld?.clear(); this.gFx?.clear(); this.gHud?.clear();
-    for (const t of [this.tTimer, this.tBanner, this.tSub, this.tCut, this.tCutSub, this.tStatus, ...(this.tNames ?? []), ...(this.tCombo ?? [])]) t?.setText('');
+    for (const t of [this.tTimer, this.tBanner, this.tSub, this.tCut, this.tCutSub, this.tStatus, this.tInfo, ...(this.tNames ?? []), ...(this.tCombo ?? [])]) t?.setText('');
   }
 
   private drawStage(id: string): void {
@@ -335,7 +339,8 @@ export class FightScene extends Phaser.Scene {
         g.fillStyle(r < p.wins ? theme.hp : theme.barBack, 1); g.fillCircle(cx, 64, 6);
       }
       const look = pack.fighters[p.fighter]!.presentation;
-      this.tNames[i]!.setText(look.name.toUpperCase());
+      const who = view.labels?.[i];
+      this.tNames[i]!.setText(who ? `${who.toUpperCase()} · ${look.name.toUpperCase()}` : look.name.toUpperCase());
       const c = this.fx.combo[i]!;
       this.tCombo[i]!.setText(c.t > 0 && c.hits >= 2 ? `${c.hits} HITS\n${c.dmg} dmg` : c.t > 0 && s.training ? `${c.dmg} dmg` : '');
       this.tCombo[i]!.setAlpha(Math.min(1, c.t / 15));
@@ -385,6 +390,7 @@ export class FightScene extends Phaser.Scene {
 
     if (this.fx.screenFlash > 0) { g.fillStyle(0xffffff, this.fx.screenFlash / 9); g.fillRect(0, 0, VIEW_W, VIEW_H); }
     this.tStatus.setText(view.driver.status ?? '');
+    this.tInfo.setText(view.driver.info ?? '');
   }
 }
 
@@ -406,7 +412,8 @@ export function createGame(parent: HTMLElement): { game: Phaser.Game; scene: Fig
     backgroundColor: '#14121f',
     scale: { mode: Phaser.Scale.FIT, autoCenter: Phaser.Scale.CENTER_BOTH },
     scene,
-    fps: { target: 60 },
+    // `?timer` drives the loop from a timer so automated checks can run in a background tab.
+    fps: { target: 60, forceSetTimeOut: new URLSearchParams(location.search).has('timer') },
     input: { keyboard: false, mouse: false, touch: false },
     audio: { noAudio: true },
     banner: false,

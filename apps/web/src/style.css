@@ -69,3 +69,20 @@ kbd { display: inline-block; min-width: 22px; text-align: center; font: 700 12px
 .set { margin-bottom: 12px; }
 .slider { flex: 1; min-width: 120px; accent-color: var(--accent); }
 .card table td:nth-child(n+2) { color: var(--paper); }
+
+/* ----- online ----- */
+.field { font: 700 16px/1 system-ui, sans-serif; color: var(--paper); background: #14121f; border: 2px solid rgba(255,255,255,.25); border-radius: 10px; padding: 12px 14px; min-width: 0; flex: 1; }
+.field:focus { outline: none; border-color: var(--accent); }
+.field.code { flex: 0 0 110px; text-transform: uppercase; letter-spacing: 3px; text-align: center; }
+.field.link { font-size: 13px; font-weight: 600; }
+.roomcode { font: 900 clamp(20px, 6vh, 34px)/1 ui-monospace, monospace; letter-spacing: 5px; color: var(--accent); background: #14121f; border: 2px dashed rgba(255,210,63,.5); border-radius: 10px; padding: 6px 12px; }
+.invite { gap: 8px; }
+.seats { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.seat { display: flex; gap: 12px; align-items: center; background: #1d1a2b; border: 2px solid rgba(255,255,255,.14); border-radius: 12px; padding: 8px 12px; min-width: 0; }
+.seat.ready { border-color: #6fe08a; box-shadow: inset 0 0 0 2px rgba(111,224,138,.25); }
+.seat-empty { width: 64px; height: 64px; border-radius: 50%; background: #2c2840; display: flex; align-items: center; justify-content: center; font-size: 26px; font-weight: 900; color: #6d6790; flex: none; }
+.lobby-status { text-align: center; }
+.lobby-grid { flex: 0 1 auto; }
+.fcard.compact { padding: 6px 8px; gap: 2px; }
+.fcard.compact .fname { font-size: 13px; }
+@media (max-height: 430px) { .lobby { gap: 5px; } .seat { padding: 4px 10px; } .seat canvas, .seat-empty { width: 40px !important; height: 40px !important; } .lobby .stat { display: none; } .lobby .fcard canvas { width: 40px !important; height: 40px !important; } .roomcode { padding: 3px 10px; } .field { padding: 8px 10px; } }

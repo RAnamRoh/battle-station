@@ -8,6 +8,8 @@ export interface FightDriver {
   advance(): SimEvent[];
   /** A short status line shown over the fight (for example while waiting for the other player). */
   status?: string;
+  /** A small line about the connection, shown at the bottom of the screen. */
+  info?: string;
   /** When true the screen holds still: no ticks, no effects. */
   paused?: boolean;
 }
