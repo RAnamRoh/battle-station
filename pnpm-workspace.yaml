@@ -7,3 +7,9 @@ packages:
 catalog:
   typescript: ^6.0.3
   vitest: ^5.1.0
+  phaser: 4.2.1
+  vite: ^8.3.8
+  zod: ^4.6.7
+  yaml: ^2.9.1
+  tsx: ^4.23.15
+  "@types/node": ^22.0.0

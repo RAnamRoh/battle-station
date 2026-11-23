@@ -2,14 +2,14 @@
 
 ## 1. Bolt 1: Sim core
 
-- [ ] 1.1 Scaffold `packages/sim` with types, integer helpers, PRNG, state copy and checksum
-- [ ] 1.2 Implement movement, attacks, hits, guarding, cancels, ki, projectiles, supers, throws, rounds
-- [ ] 1.3 Tests: mechanics scenarios, determinism, snapshot/resume, banned-API scan, golden replay
+- [x] 1.1 Scaffold `packages/sim` with types, integer helpers, PRNG, state copy and checksum
+- [x] 1.2 Implement movement, attacks, hits, guarding, cancels, ki, projectiles, supers, throws, rounds
+- [x] 1.3 Tests: mechanics scenarios, determinism, snapshot/resume, banned-API scan, golden replay
 
 ## 2. Bolt 2: Content
 
-- [ ] 2.1 `packages/content-schema`: Zod schemas, compile step, gameplay hash, CLI
-- [ ] 2.2 `content/core`: one placeholder fighter and the stage, in YAML; tests for validation errors
+- [x] 2.1 `packages/content-schema`: Zod schemas, compile step, gameplay hash, CLI
+- [x] 2.2 `content/core`: one placeholder fighter and the stage, in YAML; tests for validation errors
 
 ## 3. Bolt 3: Web client
 
