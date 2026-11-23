@@ -1,0 +1,10 @@
+id: rooftop
+name: Office Rooftop
+colours:
+  skyTop: "#2b1b4d"
+  skyBottom: "#f28a4b"
+  far: "#3a2a5e"
+  mid: "#553a6e"
+  floor: "#3b3f52"
+  floorLine: "#6d7392"
+  accent: "#ffd166"
