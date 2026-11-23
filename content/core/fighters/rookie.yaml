@@ -90,20 +90,20 @@ gameplay:
       total: 52
       kiCost: 1000
       hits:
-        - { from: 16, to: 18, box: [30, 95, 420, 50], damage: 40, hitstop: 6, pushX: 600, chip: 4 }
-        - { from: 22, to: 24, box: [30, 95, 420, 50], damage: 40, hitstop: 6, pushX: 600, chip: 4 }
-        - { from: 28, to: 31, box: [30, 95, 420, 50], damage: 60, pushX: 2200, chip: 6 }
+        - { from: 16, to: 18, box: [30, 95, 380, 50], damage: 30, hitstop: 6, pushX: 600, chip: 4 }
+        - { from: 22, to: 24, box: [30, 95, 380, 50], damage: 30, hitstop: 6, pushX: 600, chip: 4 }
+        - { from: 28, to: 31, box: [30, 95, 380, 50], damage: 50, pushX: 2200, chip: 6 }
     super:
       cls: super
       total: 84
       kiCost: 3000
       invulnerable: [1, 8]
       hits:
-        - { from: 6, to: 8, box: [30, 70, 760, 110], damage: 55, hitstop: 8, pushX: 300, chip: 8 }
-        - { from: 14, to: 16, box: [30, 70, 760, 110], damage: 55, hitstop: 8, pushX: 300, chip: 8 }
-        - { from: 22, to: 24, box: [30, 70, 760, 110], damage: 55, hitstop: 8, pushX: 300, chip: 8 }
-        - { from: 30, to: 32, box: [30, 70, 760, 110], damage: 55, hitstop: 8, pushX: 300, chip: 8 }
-        - { from: 38, to: 42, box: [30, 70, 760, 110], damage: 130, hitstop: 22, launchY: 3000, pushX: 2400, chip: 12 }
+        - { from: 6, to: 8, box: [30, 70, 760, 110], damage: 45, hitstop: 8, pushX: 300, chip: 8 }
+        - { from: 14, to: 16, box: [30, 70, 760, 110], damage: 45, hitstop: 8, pushX: 300, chip: 8 }
+        - { from: 22, to: 24, box: [30, 70, 760, 110], damage: 45, hitstop: 8, pushX: 300, chip: 8 }
+        - { from: 30, to: 32, box: [30, 70, 760, 110], damage: 45, hitstop: 8, pushX: 300, chip: 8 }
+        - { from: 38, to: 42, box: [30, 70, 760, 110], damage: 110, hitstop: 22, launchY: 3000, pushX: 2400, chip: 12 }
     throw:
       cls: throw
       total: 30
