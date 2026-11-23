@@ -30,7 +30,12 @@ We use the AI-DLC method running through OpenSpec (ADR-0002).
 - **The MVP budget is $0.** Never add a paid service or dependency without asking.
 
 ## Commands
-- `pnpm install`, `pnpm typecheck`, `pnpm test`, `pnpm lint`, `pnpm dev`
+- `pnpm install`, `pnpm typecheck`, `pnpm test`
+- `pnpm dev`: the game (Vite, port 5173) and the room server (Wrangler, port 8787) together, with live reload
+- `pnpm play`: builds the game and serves everything from port 8787, as production does
+- `pnpm content`: rebuilds the content pack from `content/core` (the web scripts do this for you)
+- There is no linter yet. The sim's determinism rules are enforced by a test in `packages/sim`.
+- Browser checks: `window.__GAME__` (state, scripted inputs) and `window.__NET__` (online session). URL options: `?timer` (run in a background tab), `?relay` (no direct link), `?lag=120` (artificial delay).
 - `pnpm spec list`, `pnpm spec validate --all`, `pnpm spec show <change>`
 - Set `OPENSPEC_TELEMETRY=0` when running openspec.
 

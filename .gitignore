@@ -52,3 +52,6 @@ Thumbs.db
 
 # Claude Code local-only settings
 .claude/settings.local.json
+
+# Compiled content packs (built from content/core)
+content/_build/

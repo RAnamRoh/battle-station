@@ -1,0 +1,26 @@
+{
+  "name": "@bs/web",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "content": "pnpm --filter @bs/content-schema build",
+    "dev": "pnpm content && vite --host",
+    "build": "pnpm content && vite build",
+    "preview": "vite preview --host",
+    "typecheck": "pnpm content && tsc --noEmit -p ."
+  },
+  "dependencies": {
+    "@bs/content-schema": "workspace:*",
+    "@bs/input": "workspace:*",
+    "@bs/sim": "workspace:*",
+    "phaser": "catalog:",
+    "@bs/bots": "workspace:*",
+    "@bs/netcode": "workspace:*",
+    "@bs/match": "workspace:*"
+  },
+  "devDependencies": {
+    "typescript": "catalog:",
+    "vite": "catalog:"
+  }
+}

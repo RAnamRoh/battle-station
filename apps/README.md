@@ -4,8 +4,8 @@ Deployable things. Each app is a thin shell over the shared `packages/`. Apps ho
 
 | App | Purpose | Status |
 |---|---|---|
-| `web/` | The game client (Vite + Phaser 4). Runs in the browser and installs as a PWA. The **only** game client. | next change |
-| `match/` | Cloudflare Worker + Durable Objects: rooms, WebRTC signalling, relay fallback, server-side replay verification | planned |
+| `web/` | The game client (Vite + Phaser 4): menus, fights, online lobby. The **only** game client. PWA install comes later. | built |
+| `match/` | Cloudflare Worker + one Durable Object per room: room codes, lobby, connection setup, input relay. Serves the built game in production. Replay verification comes later. | built |
 | `api/` | Cloudflare Worker: accounts, leaderboards, tenants, D1 access | planned |
 | `admin/` | Super-admin and tenant-admin panel | planned |
 | `gen/` | AI fighter generation pipeline | planned |

@@ -1,0 +1,141 @@
+# Zoner: wins from a distance, gains ki fast, struggles up close. Signature (back + ki): a big fast blast.
+id: ledger
+gameplay:
+  stats:
+    hp: 960
+    width: 64
+    height: 198
+    crouchHeight: 130
+    walkF: 820
+    walkB: 700
+    jumpVy: 3800
+    jumpVx: 740
+    gravity: 205
+    dashSpeed: 2000
+    dashFrames: 12
+    backdashSpeed: 2200
+    backdashFrames: 11
+    damageMul: 95
+    kiGainMul: 125
+    guardMax: 100
+  autoChain: [ 5L, 6L, 5H, 6K ]
+  moves:
+    5L:
+      cls: light
+      total: 17
+      hits:
+        - { from: 7, to: 8, box: [ 10, 120, 80, 40 ], damage: 30 }
+    6L:
+      cls: light
+      total: 20
+      moveX:
+        - [ 2, 6, 1100 ]
+      hits:
+        - { from: 8, to: 10, box: [ 10, 110, 95, 40 ], damage: 35 }
+    4L:
+      cls: light
+      total: 15
+      hits:
+        - { from: 6, to: 7, box: [ 0, 100, 70, 60 ], damage: 24 }
+    2L:
+      cls: light
+      total: 17
+      hits:
+        - { from: 7, to: 8, box: [ 10, 20, 85, 40 ], damage: 28 }
+    5H:
+      cls: heavy
+      total: 31
+      hits:
+        - { from: 10, to: 12, box: [ 10, 100, 105, 60 ], damage: 70 }
+    6H:
+      cls: heavy
+      total: 36
+      moveX:
+        - [ 4, 13, 1500 ]
+      hits:
+        - { from: 14, to: 16, box: [ 10, 90, 100, 80 ], damage: 80, guardDamage: 34, hitstun: 22 }
+    4H:
+      cls: heavy
+      total: 32
+      hits:
+        - { from: 7, to: 10, box: [ 0, 120, 80, 150 ], damage: 62, launchY: 3300, pushX: 500 }
+    2H:
+      cls: heavy
+      total: 34
+      hits:
+        - { from: 9, to: 11, box: [ 10, 0, 125, 40 ], damage: 60, launchY: 1400, pushX: 700 }
+    jL:
+      cls: light
+      air: true
+      total: 20
+      hits:
+        - { from: 4, to: 12, box: [ 0, 30, 75, 60 ], damage: 30 }
+    jH:
+      cls: heavy
+      air: true
+      total: 26
+      hits:
+        - { from: 8, to: 14, box: [ 0, 10, 85, 80 ], damage: 55, hitstun: 18 }
+    5K:
+      cls: ki
+      total: 30
+      kiCost: 400
+      projectile: { frame: 10, at: [ 60, 120 ], size: [ 44, 36 ], speed: 2700, life: 100, damage: 50, chip: 6, hitstun: 16, hitstop: 8, tier: heavy }
+    6K:
+      cls: ki
+      total: 46
+      kiCost: 1000
+      moveX:
+        - [ 6, 22, 2000 ]
+      hits:
+        - { from: 10, to: 12, box: [ 0, 80, 90, 80 ], damage: 35, hitstop: 7, pushX: 2400, chip: 3 }
+        - { from: 15, to: 17, box: [ 0, 80, 90, 80 ], damage: 35, hitstop: 7, pushX: 2400, chip: 3 }
+        - { from: 20, to: 24, box: [ 0, 80, 100, 90 ], damage: 70, launchY: 2600, pushX: 1500, chip: 5 }
+    2K:
+      cls: ki
+      total: 46
+      kiCost: 1000
+      invulnerable: [ 1, 10 ]
+      hits:
+        - { from: 5, to: 12, box: [ -10, 60, 80, 220 ], damage: 130, launchY: 3800, pushX: 400, chip: 10 }
+    4K:
+      cls: ki
+      total: 44
+      kiCost: 1000
+      projectile: { frame: 14, at: [ 70, 110 ], size: [ 84, 72 ], speed: 3600, life: 80, damage: 130, chip: 12, launchY: 2600, pushX: 1800, tier: power }
+    super:
+      cls: super
+      total: 84
+      kiCost: 3000
+      invulnerable: [ 1, 8 ]
+      hits:
+        - { from: 6, to: 8, box: [ 30, 60, 780, 130 ], damage: 60, hitstop: 8, pushX: 300, chip: 8 }
+        - { from: 14, to: 16, box: [ 30, 60, 780, 130 ], damage: 60, hitstop: 8, pushX: 300, chip: 8 }
+        - { from: 22, to: 24, box: [ 30, 60, 780, 130 ], damage: 60, hitstop: 8, pushX: 300, chip: 8 }
+        - { from: 30, to: 32, box: [ 30, 60, 780, 130 ], damage: 60, hitstop: 8, pushX: 300, chip: 8 }
+        - { from: 38, to: 42, box: [ 30, 60, 780, 130 ], damage: 140, hitstop: 22, launchY: 3000, pushX: 2400, chip: 12 }
+    throw:
+      cls: throw
+      total: 30
+      hits:
+        - { from: 5, to: 6, box: [ 0, 60, 62, 80 ], damage: 90, throw: true, launchY: 2400, pushX: 1300, hitstop: 12, tier: heavy }
+presentation:
+  name: Ledger
+  department: Accounts
+  archetype: Zoner
+  tagline: Keeps you at arm's length. And on budget.
+  superName: Audit Storm
+  quotes:
+    intro: I'll need a receipt for that.
+    win: The numbers never lie.
+  colours:
+    body: "#2a9d8f"
+    trim: "#264653"
+    skin: "#b07d56"
+    hair: "#3a3a3a"
+    aura: "#9ef01a"
+  look:
+    hair: flat
+    beard: full
+    glasses: true
+    bulk: 100

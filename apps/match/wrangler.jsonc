@@ -1,0 +1,16 @@
+{
+  // One Worker serves the game's files and runs the match rooms (ADR-0006, ADR-0013).
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "battle-station",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-11-01",
+  "assets": {
+    "directory": "../web/dist",
+    "binding": "ASSETS",
+    "not_found_handling": "single-page-application",
+    "run_worker_first": ["/api/*"]
+  },
+  "durable_objects": { "bindings": [{ "name": "ROOMS", "class_name": "Room" }] },
+  // SQLite-backed Durable Objects are the kind available on the free plan.
+  "migrations": [{ "tag": "v1", "new_sqlite_classes": ["Room"] }]
+}

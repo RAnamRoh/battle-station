@@ -1,0 +1,39 @@
+# Match rules shared by every fighter. All values are whole numbers.
+# Time is in frames (60 per second). Speeds are in subpixels per frame (256 = 1 pixel per frame).
+roundsToWin: 2
+roundFrames: 3600        # 60 seconds
+introFrames: 80
+koSlowFrames: 45
+roundEndFrames: 150
+stageWidth: 1300         # pixels
+startGap: 280            # pixels between the fighters at round start
+
+# Ki: one bar is 1000, the meter holds three bars.
+kiMax: 3000
+kiStart: 1000
+kiHit: 60
+kiBlock: 40
+kiTaken: 80
+kiCharge: 17             # per frame while charging (about one bar per second)
+superFreeze: 40
+
+comboScale: [100, 90, 80, 70, 60, 50, 40, 30]   # percent of damage for the 1st, 2nd, 3rd... hit of a combo
+juggleLimit: 6
+hitstunDecayEvery: 3
+minHitstun: 8
+
+guardRegenDelay: 60
+guardRegenRate: 1
+guardBreakStun: 45
+
+bufferFrames: 6
+dashTapWindow: 12
+backdashInvul: 6
+friction: 96
+downFrames: 26
+getupFrames: 16
+
+lastStandHpPercent: 25
+lastStandKi: 1000
+simpleDamagePercent: 90
+trainingRegenDelay: 70

@@ -1,0 +1,761 @@
+{
+ "rules": {
+  "roundsToWin": 2,
+  "roundFrames": 3600,
+  "introFrames": 80,
+  "koSlowFrames": 45,
+  "roundEndFrames": 150,
+  "stageWidth": 1300,
+  "startGap": 280,
+  "kiMax": 3000,
+  "kiStart": 1000,
+  "kiHit": 60,
+  "kiBlock": 40,
+  "kiTaken": 80,
+  "kiCharge": 17,
+  "superFreeze": 40,
+  "comboScale": [
+   100,
+   90,
+   80,
+   70,
+   60,
+   50,
+   40,
+   30
+  ],
+  "juggleLimit": 6,
+  "hitstunDecayEvery": 3,
+  "minHitstun": 8,
+  "guardRegenDelay": 60,
+  "guardRegenRate": 1,
+  "guardBreakStun": 45,
+  "bufferFrames": 6,
+  "dashTapWindow": 12,
+  "backdashInvul": 6,
+  "friction": 96,
+  "downFrames": 26,
+  "getupFrames": 16,
+  "lastStandHpPercent": 25,
+  "lastStandKi": 1000,
+  "simpleDamagePercent": 90,
+  "trainingRegenDelay": 70
+ },
+ "fighters": [
+  {
+   "id": "rookie",
+   "stats": {
+    "hp": 1000,
+    "width": 64,
+    "height": 200,
+    "crouchHeight": 130,
+    "walkF": 920,
+    "walkB": 720,
+    "jumpVy": 3900,
+    "jumpVx": 800,
+    "gravity": 210,
+    "dashSpeed": 2300,
+    "dashFrames": 12,
+    "backdashSpeed": 2000,
+    "backdashFrames": 10,
+    "damageMul": 100,
+    "kiGainMul": 100,
+    "guardMax": 100
+   },
+   "moves": [
+    {
+     "cls": 0,
+     "total": 15,
+     "kiCost": 0,
+     "air": 0,
+     "invFrom": 0,
+     "invTo": 0,
+     "hits": [
+      {
+       "from": 5,
+       "to": 6,
+       "box": {
+        "x": 10,
+        "y": 120,
+        "w": 80,
+        "h": 40
+       },
+       "throw": 0,
+       "damage": 30,
+       "guardDamage": 6,
+       "chip": 0,
+       "hitstun": 14,
+       "blockstun": 10,
+       "hitstop": 6,
+       "pushX": 1024,
+       "launchY": 0,
+       "tier": 0
+      }
+     ],
+     "moveX": [],
+     "projectile": null
+    },
+    {
+     "cls": 0,
+     "total": 18,
+     "kiCost": 0,
+     "air": 0,
+     "invFrom": 0,
+     "invTo": 0,
+     "hits": [
+      {
+       "from": 6,
+       "to": 8,
+       "box": {
+        "x": 10,
+        "y": 110,
+        "w": 95,
+        "h": 40
+       },
+       "throw": 0,
+       "damage": 35,
+       "guardDamage": 6,
+       "chip": 0,
+       "hitstun": 14,
+       "blockstun": 10,
+       "hitstop": 6,
+       "pushX": 1024,
+       "launchY": 0,
+       "tier": 0
+      }
+     ],
+     "moveX": [
+      {
+       "from": 2,
+       "to": 6,
+       "speed": 1100
+      }
+     ],
+     "projectile": null
+    },
+    {
+     "cls": 0,
+     "total": 13,
+     "kiCost": 0,
+     "air": 0,
+     "invFrom": 0,
+     "invTo": 0,
+     "hits": [
+      {
+       "from": 4,
+       "to": 5,
+       "box": {
+        "x": 0,
+        "y": 100,
+        "w": 70,
+        "h": 60
+       },
+       "throw": 0,
+       "damage": 24,
+       "guardDamage": 6,
+       "chip": 0,
+       "hitstun": 14,
+       "blockstun": 10,
+       "hitstop": 6,
+       "pushX": 1024,
+       "launchY": 0,
+       "tier": 0
+      }
+     ],
+     "moveX": [],
+     "projectile": null
+    },
+    {
+     "cls": 0,
+     "total": 15,
+     "kiCost": 0,
+     "air": 0,
+     "invFrom": 0,
+     "invTo": 0,
+     "hits": [
+      {
+       "from": 5,
+       "to": 6,
+       "box": {
+        "x": 10,
+        "y": 20,
+        "w": 85,
+        "h": 40
+       },
+       "throw": 0,
+       "damage": 28,
+       "guardDamage": 6,
+       "chip": 0,
+       "hitstun": 14,
+       "blockstun": 10,
+       "hitstop": 6,
+       "pushX": 1024,
+       "launchY": 0,
+       "tier": 0
+      }
+     ],
+     "moveX": [],
+     "projectile": null
+    },
+    {
+     "cls": 1,
+     "total": 31,
+     "kiCost": 0,
+     "air": 0,
+     "invFrom": 0,
+     "invTo": 0,
+     "hits": [
+      {
+       "from": 10,
+       "to": 12,
+       "box": {
+        "x": 10,
+        "y": 100,
+        "w": 105,
+        "h": 60
+       },
+       "throw": 0,
+       "damage": 70,
+       "guardDamage": 14,
+       "chip": 0,
+       "hitstun": 20,
+       "blockstun": 14,
+       "hitstop": 10,
+       "pushX": 1536,
+       "launchY": 0,
+       "tier": 1
+      }
+     ],
+     "moveX": [],
+     "projectile": null
+    },
+    {
+     "cls": 1,
+     "total": 36,
+     "kiCost": 0,
+     "air": 0,
+     "invFrom": 0,
+     "invTo": 0,
+     "hits": [
+      {
+       "from": 14,
+       "to": 16,
+       "box": {
+        "x": 10,
+        "y": 90,
+        "w": 100,
+        "h": 80
+       },
+       "throw": 0,
+       "damage": 80,
+       "guardDamage": 34,
+       "chip": 0,
+       "hitstun": 22,
+       "blockstun": 14,
+       "hitstop": 10,
+       "pushX": 1536,
+       "launchY": 0,
+       "tier": 1
+      }
+     ],
+     "moveX": [
+      {
+       "from": 4,
+       "to": 13,
+       "speed": 1500
+      }
+     ],
+     "projectile": null
+    },
+    {
+     "cls": 1,
+     "total": 32,
+     "kiCost": 0,
+     "air": 0,
+     "invFrom": 0,
+     "invTo": 0,
+     "hits": [
+      {
+       "from": 7,
+       "to": 10,
+       "box": {
+        "x": 0,
+        "y": 120,
+        "w": 80,
+        "h": 150
+       },
+       "throw": 0,
+       "damage": 62,
+       "guardDamage": 14,
+       "chip": 0,
+       "hitstun": 20,
+       "blockstun": 14,
+       "hitstop": 10,
+       "pushX": 500,
+       "launchY": 3300,
+       "tier": 1
+      }
+     ],
+     "moveX": [],
+     "projectile": null
+    },
+    {
+     "cls": 1,
+     "total": 34,
+     "kiCost": 0,
+     "air": 0,
+     "invFrom": 0,
+     "invTo": 0,
+     "hits": [
+      {
+       "from": 9,
+       "to": 11,
+       "box": {
+        "x": 10,
+        "y": 0,
+        "w": 115,
+        "h": 40
+       },
+       "throw": 0,
+       "damage": 60,
+       "guardDamage": 14,
+       "chip": 0,
+       "hitstun": 20,
+       "blockstun": 14,
+       "hitstop": 10,
+       "pushX": 700,
+       "launchY": 1400,
+       "tier": 1
+      }
+     ],
+     "moveX": [],
+     "projectile": null
+    },
+    {
+     "cls": 0,
+     "total": 20,
+     "kiCost": 0,
+     "air": 1,
+     "invFrom": 0,
+     "invTo": 0,
+     "hits": [
+      {
+       "from": 4,
+       "to": 12,
+       "box": {
+        "x": 0,
+        "y": 30,
+        "w": 75,
+        "h": 60
+       },
+       "throw": 0,
+       "damage": 30,
+       "guardDamage": 6,
+       "chip": 0,
+       "hitstun": 14,
+       "blockstun": 10,
+       "hitstop": 6,
+       "pushX": 1024,
+       "launchY": 0,
+       "tier": 0
+      }
+     ],
+     "moveX": [],
+     "projectile": null
+    },
+    {
+     "cls": 1,
+     "total": 26,
+     "kiCost": 0,
+     "air": 1,
+     "invFrom": 0,
+     "invTo": 0,
+     "hits": [
+      {
+       "from": 8,
+       "to": 14,
+       "box": {
+        "x": 0,
+        "y": 10,
+        "w": 85,
+        "h": 80
+       },
+       "throw": 0,
+       "damage": 55,
+       "guardDamage": 14,
+       "chip": 0,
+       "hitstun": 18,
+       "blockstun": 14,
+       "hitstop": 10,
+       "pushX": 1536,
+       "launchY": 0,
+       "tier": 1
+      }
+     ],
+     "moveX": [],
+     "projectile": null
+    },
+    {
+     "cls": 2,
+     "total": 34,
+     "kiCost": 500,
+     "air": 0,
+     "invFrom": 0,
+     "invTo": 0,
+     "hits": [],
+     "moveX": [],
+     "projectile": {
+      "frame": 12,
+      "x": 60,
+      "y": 120,
+      "w": 44,
+      "h": 36,
+      "speed": 2300,
+      "life": 90,
+      "damage": 50,
+      "guardDamage": 14,
+      "chip": 5,
+      "hitstun": 16,
+      "blockstun": 14,
+      "hitstop": 8,
+      "pushX": 1536,
+      "launchY": 0,
+      "tier": 1
+     }
+    },
+    {
+     "cls": 2,
+     "total": 46,
+     "kiCost": 1000,
+     "air": 0,
+     "invFrom": 0,
+     "invTo": 0,
+     "hits": [
+      {
+       "from": 10,
+       "to": 12,
+       "box": {
+        "x": 0,
+        "y": 80,
+        "w": 90,
+        "h": 80
+       },
+       "throw": 0,
+       "damage": 35,
+       "guardDamage": 18,
+       "chip": 3,
+       "hitstun": 24,
+       "blockstun": 18,
+       "hitstop": 7,
+       "pushX": 2400,
+       "launchY": 0,
+       "tier": 2
+      },
+      {
+       "from": 15,
+       "to": 17,
+       "box": {
+        "x": 0,
+        "y": 80,
+        "w": 90,
+        "h": 80
+       },
+       "throw": 0,
+       "damage": 35,
+       "guardDamage": 18,
+       "chip": 3,
+       "hitstun": 24,
+       "blockstun": 18,
+       "hitstop": 7,
+       "pushX": 2400,
+       "launchY": 0,
+       "tier": 2
+      },
+      {
+       "from": 20,
+       "to": 24,
+       "box": {
+        "x": 0,
+        "y": 80,
+        "w": 100,
+        "h": 90
+       },
+       "throw": 0,
+       "damage": 70,
+       "guardDamage": 18,
+       "chip": 5,
+       "hitstun": 24,
+       "blockstun": 18,
+       "hitstop": 12,
+       "pushX": 1500,
+       "launchY": 2600,
+       "tier": 2
+      }
+     ],
+     "moveX": [
+      {
+       "from": 6,
+       "to": 22,
+       "speed": 2500
+      }
+     ],
+     "projectile": null
+    },
+    {
+     "cls": 2,
+     "total": 46,
+     "kiCost": 1000,
+     "air": 0,
+     "invFrom": 1,
+     "invTo": 10,
+     "hits": [
+      {
+       "from": 5,
+       "to": 12,
+       "box": {
+        "x": -10,
+        "y": 60,
+        "w": 80,
+        "h": 220
+       },
+       "throw": 0,
+       "damage": 130,
+       "guardDamage": 18,
+       "chip": 10,
+       "hitstun": 24,
+       "blockstun": 18,
+       "hitstop": 12,
+       "pushX": 400,
+       "launchY": 3800,
+       "tier": 2
+      }
+     ],
+     "moveX": [],
+     "projectile": null
+    },
+    {
+     "cls": 2,
+     "total": 52,
+     "kiCost": 1000,
+     "air": 0,
+     "invFrom": 0,
+     "invTo": 0,
+     "hits": [
+      {
+       "from": 16,
+       "to": 18,
+       "box": {
+        "x": 30,
+        "y": 95,
+        "w": 420,
+        "h": 50
+       },
+       "throw": 0,
+       "damage": 40,
+       "guardDamage": 18,
+       "chip": 4,
+       "hitstun": 24,
+       "blockstun": 18,
+       "hitstop": 6,
+       "pushX": 600,
+       "launchY": 0,
+       "tier": 2
+      },
+      {
+       "from": 22,
+       "to": 24,
+       "box": {
+        "x": 30,
+        "y": 95,
+        "w": 420,
+        "h": 50
+       },
+       "throw": 0,
+       "damage": 40,
+       "guardDamage": 18,
+       "chip": 4,
+       "hitstun": 24,
+       "blockstun": 18,
+       "hitstop": 6,
+       "pushX": 600,
+       "launchY": 0,
+       "tier": 2
+      },
+      {
+       "from": 28,
+       "to": 31,
+       "box": {
+        "x": 30,
+        "y": 95,
+        "w": 420,
+        "h": 50
+       },
+       "throw": 0,
+       "damage": 60,
+       "guardDamage": 18,
+       "chip": 6,
+       "hitstun": 24,
+       "blockstun": 18,
+       "hitstop": 12,
+       "pushX": 2200,
+       "launchY": 0,
+       "tier": 2
+      }
+     ],
+     "moveX": [],
+     "projectile": null
+    },
+    {
+     "cls": 3,
+     "total": 84,
+     "kiCost": 3000,
+     "air": 0,
+     "invFrom": 1,
+     "invTo": 8,
+     "hits": [
+      {
+       "from": 6,
+       "to": 8,
+       "box": {
+        "x": 30,
+        "y": 70,
+        "w": 760,
+        "h": 110
+       },
+       "throw": 0,
+       "damage": 55,
+       "guardDamage": 10,
+       "chip": 8,
+       "hitstun": 26,
+       "blockstun": 22,
+       "hitstop": 8,
+       "pushX": 300,
+       "launchY": 0,
+       "tier": 3
+      },
+      {
+       "from": 14,
+       "to": 16,
+       "box": {
+        "x": 30,
+        "y": 70,
+        "w": 760,
+        "h": 110
+       },
+       "throw": 0,
+       "damage": 55,
+       "guardDamage": 10,
+       "chip": 8,
+       "hitstun": 26,
+       "blockstun": 22,
+       "hitstop": 8,
+       "pushX": 300,
+       "launchY": 0,
+       "tier": 3
+      },
+      {
+       "from": 22,
+       "to": 24,
+       "box": {
+        "x": 30,
+        "y": 70,
+        "w": 760,
+        "h": 110
+       },
+       "throw": 0,
+       "damage": 55,
+       "guardDamage": 10,
+       "chip": 8,
+       "hitstun": 26,
+       "blockstun": 22,
+       "hitstop": 8,
+       "pushX": 300,
+       "launchY": 0,
+       "tier": 3
+      },
+      {
+       "from": 30,
+       "to": 32,
+       "box": {
+        "x": 30,
+        "y": 70,
+        "w": 760,
+        "h": 110
+       },
+       "throw": 0,
+       "damage": 55,
+       "guardDamage": 10,
+       "chip": 8,
+       "hitstun": 26,
+       "blockstun": 22,
+       "hitstop": 8,
+       "pushX": 300,
+       "launchY": 0,
+       "tier": 3
+      },
+      {
+       "from": 38,
+       "to": 42,
+       "box": {
+        "x": 30,
+        "y": 70,
+        "w": 760,
+        "h": 110
+       },
+       "throw": 0,
+       "damage": 130,
+       "guardDamage": 10,
+       "chip": 12,
+       "hitstun": 26,
+       "blockstun": 22,
+       "hitstop": 22,
+       "pushX": 2400,
+       "launchY": 3000,
+       "tier": 3
+      }
+     ],
+     "moveX": [],
+     "projectile": null
+    },
+    {
+     "cls": 4,
+     "total": 30,
+     "kiCost": 0,
+     "air": 0,
+     "invFrom": 0,
+     "invTo": 0,
+     "hits": [
+      {
+       "from": 5,
+       "to": 6,
+       "box": {
+        "x": 0,
+        "y": 60,
+        "w": 62,
+        "h": 80
+       },
+       "throw": 1,
+       "damage": 90,
+       "guardDamage": 14,
+       "chip": 0,
+       "hitstun": 20,
+       "blockstun": 14,
+       "hitstop": 12,
+       "pushX": 1300,
+       "launchY": 2400,
+       "tier": 1
+      }
+     ],
+     "moveX": [],
+     "projectile": null
+    }
+   ],
+   "autoChain": [
+    0,
+    1,
+    4,
+    11
+   ]
+  }
+ ]
+}
