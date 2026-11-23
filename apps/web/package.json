@@ -14,7 +14,8 @@
     "@bs/content-schema": "workspace:*",
     "@bs/input": "workspace:*",
     "@bs/sim": "workspace:*",
-    "phaser": "catalog:"
+    "phaser": "catalog:",
+    "@bs/bots": "workspace:*"
   },
   "devDependencies": {
     "typescript": "catalog:",

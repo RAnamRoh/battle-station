@@ -88,7 +88,7 @@ export class FightScene extends Phaser.Scene {
 
   override update(_t: number, delta: number): void {
     const view = this.view;
-    if (!view) { this.clear(); return; }
+    if (!view) { if (!this.stageDrawn) this.drawStage(pack.stages[0]!.id); this.clear(); return; }
     this.acc += Math.min(delta, 250);
     let n = 0;
     while (this.acc >= TICK_MS && n < 4 && !view.driver.paused) {

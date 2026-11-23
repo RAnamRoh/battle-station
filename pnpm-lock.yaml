@@ -47,6 +47,9 @@ importers:
 
   apps/web:
     dependencies:
+      '@bs/bots':
+        specifier: workspace:*
+        version: link:../../packages/bots
       '@bs/content-schema':
         specifier: workspace:*
         version: link:../../packages/content-schema

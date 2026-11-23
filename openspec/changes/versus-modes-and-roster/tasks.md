@@ -12,7 +12,7 @@
 
 ## 3. Bolt 3: Game shell
 
-- [ ] 3.1 Main menu, settings (saved on the device), how-to-play
-- [ ] 3.2 Character select with fighter cards and CPU difficulty
-- [ ] 3.3 Versus CPU, two-player and training modes; pause; result screen with rematch
-- [ ] 3.4 Browser check on desktop and phone-sized touch
+- [x] 3.1 Main menu, settings (saved on the device), how-to-play
+- [x] 3.2 Character select with fighter cards and CPU difficulty
+- [x] 3.3 Versus CPU, two-player and training modes; pause; result screen with rematch
+- [x] 3.4 Browser check on desktop and phone-sized touch
